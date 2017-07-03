@@ -1,0 +1,134 @@
+<!--
+    Relative paths assume component is being run from inside an app or another component, where dependencies are flat
+    siblings. When this component is run from its own repo (e.g. tests, examples), we assume the server is started with
+    'gulp serve' (or similar server setup) to enable correct finding of bower dependencies for local runs.
+-->
+<link rel="import" href="../polymer/polymer.html"/>
+<link rel="import" href="css/px-kpi-styles.html">
+<link rel="import" href="../px-vis-spark/px-vis-spark.html" />
+<link rel="import" href="../px-polymer-font-awesome/polymer-font-awesome.html" />
+
+
+<!--
+The px-kpi element is for displaying KPIs in a dashboard layout as a tile with one large number value.
+
+##### Usage
+
+    <px-kpi title="Availability" value="100" uom="%" status-icon="circle" status-color="green" sparkData="..."></px-kpi>
+
+### Styling
+The following custom properties are available for styling:
+
+Custom property | Description | Default
+----------------|-------------|----------
+`--px-kpi-text-color` | Text color for the KPI | `$black`
+
+@element px-kpi
+@blurb Element for displaying KPIs in a dashboard layout as a tile with one large number value.
+@homepage index.html
+@demo demo.html
+-->
+
+<dom-module id="px-kpi">
+  <template>
+    <style include="px-kpi-styles"></style>
+
+    <h3 class="caps u-mt0 u-mb">{{title}}</h3>
+    <div class="flex u-mb">
+      <h1 class="alpha float--left u-mv0 u-mr">{{value}}</h1>
+      <div class="flex flex--col u-pt- u-pb">
+        <div class="flex__item">
+          <iron-icon id="statusIcon" icon$="fa:fa-{{statusIcon}}" class="flex__item" style$="color:{{statusColor}};"></iron-icon>
+          <span class="epsilon">{{statusLabel}}</span>
+        </div>
+        <span class="flex--bottom epsilon">{{uom}}</span>
+      </div>
+    </div>
+    <template is="dom-if" if="{{sparkData}}">
+      <px-vis-spark type="{{sparkType}}" width="300" height="50" prevent-resize="true" data="{{sparkData}}"></px-vis-spark>
+    </template>
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+
+    is: 'px-kpi',
+
+    properties: {
+      /**
+       * Title of KPI.
+       *
+       * @property title
+       * @type String
+       */
+      title: {
+        type: String
+      },
+      /**
+       * Value of KPI.
+       *
+       * @property value
+       * @type String
+       */
+      value: {
+        type: String
+      },
+      /**
+       * Unit of Measure for KPI (e.g. %, USD, etc).
+       *
+       * @property uom
+       * @type String
+       */
+      uom: {
+        type: String
+      },
+      /**
+       * Color to display the status icon.
+       *
+       * @property statusColor
+       * @type String
+       */
+      statusColor: {
+        type: String
+      },
+      /**
+       * Icon to display for the status. See Font Awesome documentation for valid names.
+       *
+       * @property statusIcon
+       * @type String
+       */
+      statusIcon: {
+        type: String
+      },
+      /**
+       * Supporting text to display next to the status icon (e.g. if the icon is an arrow, "12%" to indicate an increase).
+       *
+       * @property statusLabel
+       * @type String
+       */
+      statusLabel: {
+        type: String
+      },
+      /**
+       * The spark type to display below the KPI. One of "line","bar,"winLoss". See px-vis-spark for more information.
+       *
+       * @property sparkType
+       * @type String
+       */
+      sparkType: {
+        type: String
+      },
+      /**
+       * The spark line data to display below the KPI. See px-vis and px-vis-spark for more information.
+       *
+       * @property sparkData
+       * @type Array
+       */
+      sparkData: {
+        type: Array
+      }
+    }
+
+  });
+</script>

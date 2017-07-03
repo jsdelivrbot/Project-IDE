@@ -1,0 +1,56 @@
+<link href="../styles/dragdrop.css" rel="stylesheet">
+<link rel="stylesheet" href="../styles/structure.css">
+<div class="container">
+   
+    <div class="row">
+        <div class="col-xs-3">
+        </div>
+        <div class="col-xs-4">
+            <input type="text" ng-model="componentName">
+            <button type="button" class="add-project" data-dismiss="modal" data-ng-click="saveComponent(componentName)">Save</button>
+
+            <br/>
+            <a href="#" class="add-project" data-toggle="modal" data-target="#add_row">Add Row</a>
+           
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="row page-sidebar">
+                <div class="page-header">
+                    <h3>Developed components</h3> </div>
+                <div style="margin:4px 2px 4px 2px; " ui-draggable="true " drag="component" on-drop-success="dropSuccessHandler($event,$index,componentData) " ng-repeat="component in componentData track by $index">
+                    <span class="btn btn-primary " style="min-width: 150px ">{{component.folder_name}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-9 ">
+            <div class="row ">
+                <div class="page-header ">
+                    <h3>Drop area to see the developed component</h3>
+                     <Button class="add-project" data-ng-click="viewComponent()">Final Preview</Button>
+                </div>
+                <div id="proContainer" style="width: 100%">
+                </div>
+            </div>
+        </div>
+        <div id="add_row" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header login-header">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <h4 class="modal-title">Add Row</h4>
+                    </div>
+                    <div class="modal-body">
+                        Insert number of columns :
+                        <input type="number" min=1 max=12 data-ng-model="columns">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="cancel" data-dismiss="modal">Close</button>
+                        <button type="button" class="add-project" data-dismiss="modal" data-ng-click="createColumn($event)">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

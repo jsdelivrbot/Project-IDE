@@ -1,0 +1,67 @@
+<style>
+.ace_editor {
+    height: 300px;
+}
+</style>
+<link href="../styles/component-Design.css" rel="stylesheet">
+<div class="container-fluid display-table">
+    <div class="row display-table-row">
+        <div class="col-md-2" style="height:100vh;">
+            <ul>
+                <li>
+                    <a href="#">{{fileData.folder_name}}</a>
+                    <ul>
+                        <li data-ng-repeat="(key, files) in fileData.files">
+                            <i class="fa fa-folder " aria-hidden="true"> {{key}}</i>
+                            <ul data-ng-repeat="file in files" ">
+                                        <li>&nbsp;&nbsp;&nbsp;&nbsp;{{file.file_name}}</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+
+
+
+        </div>
+        
+                <div class="col-md-10 ">
+            <!--<button type="button " class="slide-toggle ">Slide Toggle</button> -->
+            <div class="row " style="display: flex ">
+
+                <div class="col-md-4 ">
+
+
+                    <h4>HTML Editor</h4>
+                    <div id='html' ui-ace="{ [(text)] : 'default', useWrapMode : true, showGutter: false, theme: 'twilight', mode: 'html', firstLineNumber: 5, onLoad: aceLoadedHTML, onChange: aceChanged } "></div>
+                    </div>
+                <div class="col-md-4 ">
+
+
+                    <h4>JavaScipt Editor</h4>
+                    <div id='js' ui-ace="{ useWrapMode : true, showGutter: false, theme: 'twilight', mode: 'javascript', firstLineNumber: 5, onLoad: aceLoadedJS, onChange: aceChanged } " ></div>
+
+                </div>
+                <div class="col-md-4 ">
+
+
+                    <h4>CSS Editor</h4>
+                    <div id='css' ui-ace="{ useWrapMode : true, showGutter: false, theme: 'twilight', mode: 'css', firstLineNumber: 5, onLoad: aceLoadedCSS, onChange: aceChanged } " ></div>
+                     </div>
+
+                </div>
+            
+            <div class="row " style="display: flex;margin:10px 0px 10px 0px; ">
+                <button class="btn btn-primary " data-ng-click="preview() ">Preview</button>
+                <button class="btn btn-primary " data-ng-click='saveContent()'>Save</button>
+            </div>
+            <div id = 'previewContainer' class="row " style="min-height:250px;display: flex;border:1px solid black;margin:0px ">
+               <!--  <preview-dir data-ng-bind-html='templateData'  style="height:100%; width:100% "></preview-dir> -->
+            </div>
+         </div>   
+        </div>
+    </div>
+
+    
+</div>

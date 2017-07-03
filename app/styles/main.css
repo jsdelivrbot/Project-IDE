@@ -1,0 +1,74 @@
+html,
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.padding-box {
+    padding: 0px;
+}
+
+.margin-box {
+    margin: 15px;
+}
+
+.pole {
+    background-color: #808080;
+    height: inherit;
+    width: 20px;
+}
+
+.transformed {
+    -webkit-transform: rotate3d(0, 1, 0, 60deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate3d(0, 4, 0, 140deg);
+    /* Standard syntax */
+}
+
+.container-transform {
+    margin: 10px 0px 0px 5px;
+    width: 300px;
+    height: 125px;
+    perspective: 100px;
+    border: 4px solid #a2b058;
+    background: green;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+.div-color-box {
+    margin: 5px 0px 0px 0px;
+    width: 200px;
+    height: inherit;
+    padding-left: 400px;
+    perspective: 200px;
+}
+
+.invert-text {
+    transform: rotateY(-140deg);
+}
+
+.new-comp,
+.existing-comp {
+    background: rgba(12, 158, 213, 0.9);
+    color: #fff;
+    text-align: left;
+    font-size: 16pt;
+    line-height: 16pt;
+    padding: 30px 35px;
+    border: none;
+}
+
+.action-buttons-row {
+    text-align: center;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 50%;
+    margin: auto;
+}
+
+.pad-15 {
+    padding: 15px;
+}

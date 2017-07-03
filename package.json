@@ -1,0 +1,22 @@
+{
+  "name": "angular-seed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongodb": "^2.2.25",
+    "mongoose": "^4.9.3",
+    "morgan": "^1.8.1",
+    "nodemon": "^1.11.0",
+    "open": "0.0.5",
+    "requirejs": "^2.3.3"
+  }
+}

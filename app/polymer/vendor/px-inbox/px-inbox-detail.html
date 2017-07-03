@@ -1,0 +1,95 @@
+<!--
+    Relative paths assume component is being run from inside an app or another component, where dependencies are flat
+    siblings. When this component is run from its own repo (e.g. tests, examples), we assume the server is started with
+    'gulp serve' (or similar server setup) to enable correct finding of bower dependencies for local runs.
+-->
+<link rel="import" href="../polymer/polymer.html"/>
+<link rel="import" href="css/px-inbox-styles.html">
+
+<!--
+This sub-component is simply an example for demo purposes.
+Any content placed between the <px-inbox> and </px-inbox> tags will be rendered as the "detail view"
+of the px-inbox list/detail component. You could componentize your detail view with Polymer like
+we've done in this file, or you could define your view in plain HTML/JS/CSS or any other library or framework.
+-->
+
+<dom-module id="px-inbox-detail">
+  <template>
+    <style include="px-inbox-styles"></style>
+    <template is="dom-if" if="{{id}}">
+      <div class="header flex flex--left">
+        <div id="icon" class$="{{severity}} u-mr-">
+          <div class="svg-canvas">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-triangle">
+              <polygon points="0,27 15,0 30,27"/>
+            </svg>
+          </div>
+          <span class="number"></span>
+        </div>
+        <span class="epsilon" style="line-height:30px;">{{title}}</span>
+      </div>
+      <div class="details">
+        <span class="caps title">Alert Information</span>
+        <div class="flex u-mt">
+          <div class="flex__item">
+            <span class="label">Alert ID</span><br/>
+            <span>749581</span>
+          </div>
+          <div class="flex__item">
+            <span class="label">Alert Source</span><br/>
+            <span>Combustion</span>
+          </div>
+        </div>
+        <div class="flex u-mt">
+          <div class="flex__item">
+            <span class="label">Received Date/Time</span><br/>
+            <span>2016-10-05T08:00</span>
+          </div>
+          <div class="flex__item">
+            <span class="label">Case Number</span><br/>
+            <span>127587937</span>
+          </div>
+        </div>
+      </div>
+      <div class="details">
+        <span class="caps title">Asset Information</span>
+        <div class="flex u-mt">
+          <div class="flex__item">
+            <span class="label">Customer</span><br/>
+            <span>Customer Name</span>
+          </div>
+          <div class="flex__item">
+            <span class="label">Serial Number</span><br/>
+            <span>GT769375</span>
+          </div>
+        </div>
+        <div class="flex u-mt">
+          <div class="flex__item">
+            <span class="label">DLN Type</span><br/>
+            <span>DLN 2.6</span>
+          </div>
+          <div class="flex__item">
+            <span class="label">Model</span><br/>
+            <span>7FA+e</span>
+          </div>
+        </div>
+      </div>
+    </template>
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+
+    is: 'px-inbox-detail',
+
+    properties: {
+      title: {
+        type: String
+      },
+      severity: {
+        type: String
+      }
+    }
+  });
+</script>

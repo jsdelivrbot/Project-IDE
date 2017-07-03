@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="../bower_components/prism/themes/prism.css">
+<link rel="stylesheet" href="../bower_components/codeflask.js/src/codeflask.css">
+<link rel="stylesheet" href="../styles/Design.css">
+
+<style>
+.editor-container {
+    height: 300px;
+    border: 1px solid gray;
+    width: 100%;
+}
+
+</style>
+<link href="../styles/component-Design.css" rel="stylesheet">
+<div class="container-fluid display-table">
+    <div class="row display-table-row">
+        <div class="col-md-2" style="height:100vh;">
+            <ul>
+                <li>
+                    <a href="#">{{fileData.folder_name}}</a>
+                    <ul>
+                        <li data-ng-repeat="(key, files) in fileData.files">
+                            <i class="fa fa-folder " aria-hidden="true"> {{key}}</i>
+                            <ul data-ng-repeat="file in files" ">
+                                        <li>&nbsp;&nbsp;&nbsp;&nbsp;{{file.file_name}}</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+
+
+
+        </div>
+        <div class="col-md-10 ">
+            <!--<button type="button " class="slide-toggle ">Slide Toggle</button> -->
+            <div class="row " style="display: flex ">
+
+                <div class="col-md-4 ">
+
+
+                    <h4>HTML Editor</h4>
+                    <div class="editor-container " id="html-writer "></div>
+                </div>
+                <div class="col-md-4 ">
+
+
+                    <h4>JavaScipt Editor</h4>
+                    <div class=" editor-container " id="javascript-writer "></div>
+
+                </div>
+                <div class="col-md-4 ">
+
+
+                    <h4>CSS Editor</h4>
+                    <div class="editor-container " id="css-writer "></div>
+                     </div>
+
+                </div>
+            
+            <div class="row " style="display: flex;margin:10px 0px 10px 0px; ">
+                <button class="btn btn-primary " data-ng-click="saveChanges() ">Save</button>&nbsp;&nbsp;
+                <button class="btn btn-primary " data-ng-click="preview() ">Preview</button>
+            </div>
+            <div class="row " style="display: flex;border:1px solid black;margin:0px ">
+                <div preview-dir  style="height:50vh; width:100% "></div>
+                
+            </div>
+         </div>   
+        </div>
+    </div>
+
+    
+</div>

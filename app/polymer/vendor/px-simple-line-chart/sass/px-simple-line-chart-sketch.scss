@@ -1,0 +1,63 @@
+/*
+ * Copyright (c) 2014 GE Global Research. All rights reserved.
+ *
+ * The copyright to the computer software herein is the property of
+ * GE Global Research. The software may be used and/or copied only
+ * with the written permission of GE Global Research or in accordance
+ * with the terms and conditions stipulated in the agreement/contract
+ * under which the software has been supplied.
+ */
+
+//
+// Sass for the "sketch" notion of the px-simple-line-chart component
+//
+// @author
+//
+
+/*
+THIS FILE SHOULD CONTAIN ONLY ABSTRACT/'SKETCH' THEME RULES, NOT SPECIFIC TO PREDIX BRANDING
+Predix branding rules go in px-simple-line-chart-predix.scss, not in this file.
+*/
+
+svg.px-simple-line-chart-svg {
+  background: var(--px-simple-line-chart-background-color, transparent);
+  overflow: hidden;
+}
+
+.chartBorder {
+  stroke: var(--px-simple-line-chart-border-color, #000000);
+  stroke-width: 1;
+}
+
+.chartGrid {
+  stroke: var(--px-simple-line-chart-grid-color, #E4E4EA);
+  stroke-width: 1;
+  fill: none;
+}
+
+rect.chartBottom {
+  fill: var(--px-simple-line-chart-bottom-color, #ffffff);
+}
+
+rect.axisBar {
+  fill: var(--px-simple-line-chart-axis-bar-color, #F7F7FC);
+}
+
+text.axisLabel {
+  fill: var(--px-simple-line-chart-axis-label-color, #7C7C84);
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: var(--px-simple-line-chart-axis-label-font-weight, lighter);
+  display: block;
+}
+
+.chartLine {
+  stroke: var(--px-simple-line-chart-line-color, #01B2E5);
+  stroke-width: 1;
+  fill: none;
+}
+
+.thresholdLine {
+  stroke: var(--px-simple-line-chart-theshold-line-color, #FAA43A);
+  stroke-width: 1;
+}

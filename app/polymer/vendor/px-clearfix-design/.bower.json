@@ -1,0 +1,40 @@
+{
+  "name": "px-clearfix-design",
+  "version": "0.1.17",
+  "authors": [
+    "General Electric"
+  ],
+  "description": "The clearfix module provides a minimal clearfix helper class to help clear floats.",
+  "main": "_trumps.clearfix.scss",
+  "keywords": [
+    "px",
+    "sass",
+    "clearfix"
+  ],
+  "homepage": "https://github.com/PredixDev/px-clearfix-design.git",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "OSS_Notice.pdf"
+  ],
+  "dependencies": {
+    "px-functions-design": "~1.0.0"
+  },
+  "devDependencies": {
+    "px-starter-kit-design": "^0.7.0",
+    "px-sass-doc": "^0.3.0"
+  },
+  "_release": "0.1.17",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.1.17",
+    "commit": "421c1422d81425a09f4e28f3eb71fd8385d090a6"
+  },
+  "_source": "https://github.com/predixDev/px-clearfix-design.git",
+  "_target": "~0.1.9",
+  "_originalSource": "px-clearfix-design"
+}
